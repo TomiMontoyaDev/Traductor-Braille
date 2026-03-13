@@ -7,15 +7,18 @@ def pedirTexto(palabra:str):
 palabra = pedirTexto("Ingrese el texto a traducir: ")
 
 #Traduccion letra a letra   
-def traducir_caracter_a_braile(text:str):
-    for letra in text: 
+def traducir_caracter_a_braile(text: str):
+    resultado = ""
+    for letra in text.lower(): 
         if letra in alfabeto_braille:
-            print(alfabeto_braille[letra], " ", end="")
+            resultado += alfabeto_braille[letra] + " "
         else:
-            print(letra, end="")
+            resultado += letra
+        print("\n")
+        print("Palabra traducida a Braille: ", palabra)
+    return resultado
 
-    print("\n")
-    print("Palabra traducida a Braille: ", palabra)
+
 
 
 

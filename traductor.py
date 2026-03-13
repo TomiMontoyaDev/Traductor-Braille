@@ -1,4 +1,5 @@
 from dicts import (alfabeto_braille,numeros_braille)
+from archivos import guardarArchivo
 
 def pedirTexto(palabra:str):
     palabra = input("Ingrese el texto a traducir: ")
@@ -42,6 +43,20 @@ def traducir_numeros_a_braille(texto_numerico):
 
 
 def main():
-    print("Traductor de Español a Braile: ")
-    pedirTexto()
+    entrada = input("Ingresa el texto o número a traducir: ").strip()
+    
+    if not entrada:
+        print("No ingresaste nada.")
+        return
+
+    # Identificamos si es número o texto
+    if entrada.isdigit():
+        print("Detectado: Entrada numérica.")
+        resultado_final = traducir_numeros_a_braille(entrada)
+    else:
+        print("Detectado: Entrada de texto.")
+        resultado_final = traducir_caracter_a_braile(entrada)
+
+    # Guardamos el resultado obtenido en el TXT
+    guardar_en_archivo(resultado_final)
     

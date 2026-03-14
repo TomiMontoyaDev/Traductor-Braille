@@ -8,9 +8,9 @@ def pedirTexto(palabra=""):
 #Traduccion letra a letra   
 def traducir_caracter_a_braile(text: str):
     """
-    Funcion que traduce numeros enteros a braile. compara numero a numero
-     input: numeros String
-     output: numeros String: a Braile
+    Funcion que traduce un texto a braile. compara caracter por caracter
+     input: texto:String:Español
+     output: texto:String:Braile
     """
     if not text: return ""
     resultado = ""
